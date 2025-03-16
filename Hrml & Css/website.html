@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+        }
+        h1 {
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section {
+            background-color: #b0b0b0;
+            border: 1px solid black;
+            padding: 15px;
+            position: relative;
+            width: 30%;
+            min-width: 300px;
+            text-align: left;
+        }
+        .section-title {
+            position: absolute;
+            top: -15px;
+            right: 10px;
+            background-color: #e6a8a8;
+            color: black;
+            padding: 5px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            border: 1px solid black;
+        }
+        .section:nth-child(2) .section-title {
+            background-color: #d66;
+        }
+        .section:nth-child(3) .section-title {
+            background-color: #f4d35e;
+        }
+     
+        @media (min-width: 992px) {
+            .section {
+                flex: 1;
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 991px) {
+            .container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto auto;
+                gap: 20px;
+            }
+            .section {
+                width: 100%;
+            }
+            .section:nth-child(1),
+            .section:nth-child(2) {
+                grid-column: span 1;
+            }
+            .section:nth-child(3) {
+                grid-column: span 2;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Menu</h1>
+    <div class="container">
+        <div class="section">
+            <div class="section-title">Chicken</div>
+            <p>Le poulet est une viande tendre et savoureuse, appréciée dans le monde entier pour sa polyvalence. Qu'il soit rôti, grillé ou mijoté, il s’adapte à une multitude de recettes et de traditions culinaires. Léger et riche en protéines, il constitue un excellent choix pour une alimentation équilibrée.</p>
+        </div>
+        <div class="section">
+            <div class="section-title">Beef</div>
+            <p>Le bœuf est une viande robuste et goûteuse qui se décline sous différentes formes, du steak juteux aux plats mijotés en sauce. Riche en fer et en protéines, il apporte énergie et vitalité. Sa texture fondante et sa saveur prononcée en font un incontournable de la gastronomie.</p>
+        </div>
+        <div class="section">
+            <div class="section-title">Sushi</div>
+            <p>Le sushi est un plat raffiné de la cuisine japonaise, combinant poisson cru, riz vinaigré et algues. Apprécié pour sa fraîcheur et son équilibre subtil de saveurs, il est aussi reconnu pour ses bienfaits nutritionnels, notamment en oméga-3 et en protéines de haute qualité.</p>
+        </div>
+    </div>
+</body>
+</html>
